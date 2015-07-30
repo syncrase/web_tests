@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>list sort</title>
+
+  <style>
+	#sortable { 
+		list-style-type: none; 
+		margin: 0; 
+		padding: 0; 
+ 
+		
+	}
+	#sortable li { 
+		margin: 0 3px 3px 3px; 
+		padding: 0.4em; 
+		padding-left: 1.5em; 
+		font-size: 1.4em; 
+
+		background: #e1e1e1;
+	}
+	div#left{
+
+		float : left;
+	}
+	div#right{
+
+		float : right;
+	}
+  </style>
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			<!-- Select all anchors -->
+			$('body').find('a').animate({'margin-top': '300px', 'margin-left': '300px'},1000);
+			
+			<!-- In the same way -->
+			$('h2').next(); //selects the next sibling (the paragraph)
+			$('h2').nextAll(); //selects all the siblings after it.
+			$('p').prev(); //selects the previous sibling (the h2)
+			$('p').prevAll(); //selects the previous siblings
+		
+			$('h2').siblings();
+		});
+	</script>
+</head>
+<body>
+<div id="container">
+	<div>
+		<h2>A header with <a href="http://www.1stwebdesigner.com" class="movable">a link</a> inside.</h2>
+		<p>A paragraph in the div</p>
+	</div>
+
+	<div id="left">
+		<ul id="sortable">
+			<li>Item 1</li>
+			<li><a href="http://www.1stwebdesigner.com" class="movable">LinkedItem 2</a></li>
+			<li>Item 3</li>
+			<li>Item 4</li>
+			<li>Item 5</li>
+			<li>Item 6</li>
+			<li>Item 7</li>
+		</ul>
+	</div>
+	<div id="right">
+		<ul id="sortable">
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+			<li>Item 4</li>
+			<li>Item 5</li>
+			<li>Item 6</li>
+			<li>Item 7</li>
+		</ul>
+	</div>
+</div>
+
+
+
+ 
+</body>
+
+
+	
+	
+
+	
+	
+
+</html>

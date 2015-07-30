@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>list sort</title>
+
+  <style>
+	#something {
+		width: 200px;
+		height: 200px;
+		background-color: red;
+		color: white;
+		border: 4px solid black;
+		margin: 100px 0 0 80px;
+	}
+  </style>
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+</head>
+<body>
+ 
+<div>
+	<h2>A header with <a href="http://www.1stwebdesigner.com" class="movable">a link</a> inside.</h2>
+	<p>A paragraph in the div</p>
+</div>
+
+ <div id="something">
+<p>this is some text</p>
+</div>
+
+</body>
+<!-- Have to be before the last html tag to be sure that jQuery is execute when the page is fully loaded.
+however, the jQuery can be write anywhere if it's wrap in $(document).ready(function() {...});
+Here will be write jQuery 
+$('div').children('a').animate({'margin-top': '300px', 'margin-left': '400px'},1000);
+-->
+<script type="text/javascript">
+	<!-- Select a paragraph contained in a div id 'something' -->
+	$('div#something p').parent().animate({'margin-top': '300px', 'margin-left': '400px'},1000);
+	<!-- Select all anchors class 'movable' contained in an h2, itself contained in a div -->
+	$('div h2').children('a.movable').animate({'margin-top': '300px', 'margin-left': '400px'},1000);
+	
+	
+	
+</script>
+</html>

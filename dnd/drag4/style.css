@@ -1,0 +1,31 @@
+
+body {
+/*	font-family: arial;
+	margin: 0px; */
+	/* for IE6 / IE7 */
+}
+
+/* drag objects (DIV inside table cells) */
+.redips-drag {
+	cursor: move;
+	border: 0 solid #FFFFFF;
+}
+
+/* allow / deny access to cells marked with 'mark' class name */
+.redips-mark {
+	color: white;
+	background-color: #9B9EA2;
+}
+/* trash cell */
+.redips-trash {
+	color: white;
+	background-color: #2D4B7A;
+}
+
+/* table cells */
+div#redips-drag td {
+	height: 32px;
+	text-align: center;
+	font-size: 10pt;
+}
+

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>list sort</title>
+
+  <style>
+	#sortable { 
+		list-style-type: none; 
+		margin: 0; 
+		padding: 0; 
+ 
+		
+	}
+	#sortable li { 
+		margin: 0 3px 3px 3px; 
+		padding: 0.4em; 
+		padding-left: 1.5em; 
+		font-size: 1.4em; 
+
+		background: #e1e1e1;
+	}
+	div#left{
+
+		float : left;
+	}
+	div#right{
+
+		float : right;
+	}
+  </style>
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+</head>
+<body>
+<div id="container">
+	<div>
+		<h2>A header with <a href="http://www.1stwebdesigner.com" class="movable">a link</a> inside.</h2>
+		<p>A paragraph in the div</p>
+	</div>
+
+</div>
+
+
+<div id="left">
+<ul id="sortable">
+	<li>Item 1</li>
+	<li><a href="http://www.1stwebdesigner.com" class="movable">LinkedItem 2</a></li>
+	<li>Item 3</li>
+	<li>Item 4</li>
+	<li>Item 5</li>
+	<li>Item 6</li>
+	<li>Item 7</li>
+</ul>
+</div>
+<div id="right">
+<ul id="sortable">
+	<li>Item 1</li>
+	<li>Item 2</li>
+	<li>Item 3</li>
+	<li>Item 4</li>
+	<li>Item 5</li>
+	<li>Item 6</li>
+	<li>Item 7</li>
+</ul>
+</div>
+ 
+</body>
+
+<script type="text/javascript">
+	
+		<!-- Slect the 4th list element from left list -->
+	$('div#left ul li').eq(3).animate({'margin-top': '300px', 'margin-left': '300px'},1000);
+	<!-- or the 5th in a different way -->
+	$('div#left').children('ul').children('li').eq(4).animate({'margin-top': '300px', 'margin-left': '300px'},1000);
+	
+	$('div#right ul li').eq(3).animate({'margin-top': '300px', 'margin-right': '300px'},750);
+	
+	
+</script>
+</html>

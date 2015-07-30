@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			
+			.move{
+			cursor: move;
+			}
+			.alias{
+			cursor: alias;
+			}
+			.all-scroll{
+			cursor: all-scroll;
+			}
+			.auto{
+			cursor: auto;
+			}
+			.cell{
+			cursor: cell;
+			}
+			.context-menu{
+			cursor: context-menu;
+			}
+			.col-resize{
+			cursor: col-resize;
+			}
+			.copy{
+			cursor: copy;
+			}
+			.crosshair{
+			cursor: crosshair;
+			}
+			.default{
+			cursor: default;
+			}
+			.e-resize{
+			cursor: e-resize;
+			}
+			.ew-resize{
+			cursor: ew-resize;
+			}
+			.grab{
+			cursor: grab;
+			}
+			.grabbing{
+			cursor: grabbing;
+			}
+			.help{
+			cursor: help;
+			}
+			.n-resize{
+			cursor: n-resize;
+			}
+			.ne-resize{
+			cursor: ne-resize;
+			}
+			.nesw-resize{
+			cursor: nesw-resize;
+			}
+			.ns-resize{
+			cursor: ns-resize;
+			}
+			.nw-resize{
+			cursor: nw-resize;
+			}
+			.nwse-resize{
+			cursor: nwse-resize;
+			}
+			.no-drop{
+			cursor: no-drop;
+			}
+			.none{
+			cursor: none;
+			}
+			.not-allowed{
+			cursor: not-allowed;
+			}
+			.pointer{
+			cursor: pointer;
+			}
+			.progress{
+			cursor: progress;
+			}
+			.row-resize{
+			cursor: row-resize;
+			}
+			.s-resize{
+			cursor: s-resize;
+			}
+			.se-resize{
+			cursor: se-resize;
+			}
+			.sw-resize{
+			cursor: sw-resize;
+			}
+			.text{
+			cursor: text;
+			}
+			.URL{
+			cursor: URL;
+			}
+			.vertical-text{
+			cursor: vertical-text;
+			}
+			.w-resize{
+			cursor: w-resize;
+			}
+			.wait{
+			cursor: wait;
+			}
+			.zoom-in{
+			cursor: zoom-in;
+			}
+			.zoom-out{
+			cursor: zoom-out;
+			}
+			.initial{
+			cursor: initial;
+			}
+			.inherit{
+			cursor: inherit;
+			}
+			
+			.title{
+			width:50px;
+			height:25px;
+			background:#ccc;
+			}
+			.example{
+			width:50px;
+			height:25px;
+			background:#ccc;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		
+		
+		
+		
+		
+		<table id="customStatusesTable" >
+			
+			<tr>
+				<td class="title">
+					<div>
+						move
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('move')" onmouseout="this.classList.remove('move')">
+						move
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						alias
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('alias')" onmouseout="this.classList.remove('alias')">
+						alias
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						all-scroll
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('all-scroll')" onmouseout="this.classList.remove('all-scroll')">
+						all-scroll
+					</div>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="title">
+					<div>
+						auto
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('auto')" onmouseout="this.classList.remove('auto')">
+						auto
+					</div>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="title">
+					<div>
+						cell
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('cell')" onmouseout="this.classList.remove('cell')">
+						cell
+					</div>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="title">
+					<div>
+						context-menu
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('context-menu')" onmouseout="this.classList.remove('context-menu')">
+						context-menu
+					</div>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="title">
+					<div>
+						col-resize
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('col-resize')" onmouseout="this.classList.remove('col-resize')">
+						col-resize
+					</div>
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="title">
+					<div>
+						copy
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('copy')" onmouseout="this.classList.remove('copy')">
+						copy
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						crosshair
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('crosshair')" onmouseout="this.classList.remove('crosshair')">
+						crosshair
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						default
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('default')" onmouseout="this.classList.remove('default')">
+						default
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						e-resize
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('e-resize')" onmouseout="this.classList.remove('e-resize')">
+						e-resize
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						ew-resize
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('ew-resize')" onmouseout="this.classList.remove('ew-resize')">
+						ew-resize
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						grab
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('grab')" onmouseout="this.classList.remove('grab')">
+						grab
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						grabbing
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('grabbing')" onmouseout="this.classList.remove('grabbing')">
+						grabbing
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						help
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('help')" onmouseout="this.classList.remove('help')">
+						help
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						n-resize
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('n-resize')" onmouseout="this.classList.remove('n-resize')">
+						n-resize
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						ne-resize
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('ne-resize')" onmouseout="this.classList.remove('ne-resize')">
+						ne-resize
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						nesw-resize
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('nesw-resize')" onmouseout="this.classList.remove('nesw-resize')">
+						nesw-resize
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						ns-resize
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('ns-resize')" onmouseout="this.classList.remove('ns-resize')">
+						ns-resize
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						nw-resize
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('nw-resize')" onmouseout="this.classList.remove('nw-resize')">
+						nw-resize
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						nwse-resize
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('nwse-resize')" onmouseout="this.classList.remove('nwse-resize')">
+						nwse-resize
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						no-drop
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('no-drop')" onmouseout="this.classList.remove('no-drop')">
+						no-drop
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						none
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('none')" onmouseout="this.classList.remove('none')">
+						none
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						not-allowed
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('not-allowed')" onmouseout="this.classList.remove('not-allowed')">
+						not-allowed
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						pointer
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('pointer')" onmouseout="this.classList.remove('pointer')">
+						pointer
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						progress
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('progress')" onmouseout="this.classList.remove('progress')">
+						progress
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						row-resize
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('row-resize')" onmouseout="this.classList.remove('row-resize')">
+						row-resize
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						s-resize
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('s-resize')" onmouseout="this.classList.remove('s-resize')">
+						s-resize
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						se-resize
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('se-resize')" onmouseout="this.classList.remove('se-resize')">
+						se-resize
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						sw-resize
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('sw-resize')" onmouseout="this.classList.remove('sw-resize')">
+						sw-resize
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						text
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('text')" onmouseout="this.classList.remove('text')">
+						text
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						URL
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('URL')" onmouseout="this.classList.remove('URL')">
+						URL
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						vertical-text
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('vertical-text')" onmouseout="this.classList.remove('vertical-text')">
+						vertical-text
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						w-resize
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('w-resize')" onmouseout="this.classList.remove('w-resize')">
+						w-resize
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						wait
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('wait')" onmouseout="this.classList.remove('wait')">
+						wait
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						zoom-in
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('zoom-in')" onmouseout="this.classList.remove('zoom-in')">
+						zoom-in
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						zoom-out
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('zoom-out')" onmouseout="this.classList.remove('zoom-out')">
+						zoom-out
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						initial
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('initial')" onmouseout="this.classList.remove('initial')">
+						initial
+					</div>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td class="title">
+					<div>
+						inherit
+					</div>
+				</td>
+				<td class="example">
+					<div class="" onmouseover="this.classList.add('inherit')" onmouseout="this.classList.remove('inherit')">
+						inherit
+					</div>
+				</td>
+			</tr>
+			
+			
+			
+			
+		</table>
+		
+	</body>
+	
+</html>			

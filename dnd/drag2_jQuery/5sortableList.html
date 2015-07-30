@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>list sort</title>
+
+  <style>
+
+
+  </style>
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  
+	<!-- This is this line which allow to sort the list -->
+   <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+   
+	<script type="text/javascript">
+		$(document).ready(function() {
+		
+				//
+				//$('ul#stateList li').eq(1).animate({'margin-left': '300px'},1000);
+				$('ul#stateList').sortable();//{ items: '> li' }  // no utility in this case
+			
+		});
+	</script>
+</head>
+<body>
+
+<ul id="stateList">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+  <li>Item 4</li>
+  <li>Item 5</li>
+</ul>
+
+
+
+ 
+</body>
+
+
+	
+	
+
+	
+	
+
+</html>

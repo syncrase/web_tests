@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<style type="text/css">
+			
+			.row {
+			float:left;
+			width:100%;
+			margin:10px;
+			}
+			
+			#cross1 {
+			background: #f90;
+			color: #fff;
+			font-family: 'Helvetica', 'Arial', sans-serif;
+			font-size: 2em;
+			font-weight: bold;
+			text-align: center;
+			width: 40px;
+			height: 40px;
+			border-radius: 5px;
+			}
+			
+			
+			#cross2{
+			width:22px;
+			height:22px;
+			background-color:red;
+			position:relative;
+			border-radius:6px;
+			box-shadow:2px 2px 4px 0 white;
+			}
+			
+			#cross2:before,#cross2:after{
+			content:'';
+			position:absolute;
+			width:18px;
+			height:3px;
+			background-color:white;
+			border-radius:2px;
+			top:9px;
+			box-shadow:0 0 2px 0 #ccc;
+			}
+			
+			#cross2:before{
+			-webkit-transform:rotate(45deg);
+			-moz-transform:rotate(45deg);
+			transform:rotate(45deg);
+			left:2px;
+			}
+			#cross2:after{
+			-webkit-transform:rotate(-45deg);
+			-moz-transform:rotate(-45deg);
+			transform:rotate(-45deg);
+			right:2px;
+			}
+			
+			
+			
+			
+			
+			
+			#cross3{
+			width:22px;
+			height:22px;
+			background-color:red;
+			position:relative;
+			border-radius:6px;
+			box-shadow:2px 2px 4px 0 black;
+			}
+			
+			#cross3:before,#cross3:after{
+			content:'';
+			position:absolute;
+			width:18px;
+			height:3px;
+			background-color:white;
+			border-radius:2px;
+			top:9px;
+			box-shadow:0 0 2px 0 #ccc;
+			}
+			
+			#cross3:before{
+			left:2px;
+			}
+			#cross3:after{
+			-webkit-transform:rotate(90deg);
+			-moz-transform:rotate(90deg);
+			transform:rotate(90deg);
+			right:2px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="row">
+			<div id="cross1">
+				<span id="x">X</span>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div id="cross2">
+			</div>
+		</div>
+		
+		<div class="row">
+			<div id="cross3">
+			</div>
+		</div>
+		
+	</body>
+</html>		

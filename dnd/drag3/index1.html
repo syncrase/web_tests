@@ -1,0 +1,75 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+		<!-- <script type="text/javascript" src="header.js"></script> -->
+		<script type="text/javascript" src="redips-drag-min.js"></script>
+		<script type="text/javascript">
+			function onloading(){
+				REDIPS.drag.init();
+				REDIPS.drag.dropMode = 'switching';
+			}
+		</script>
+
+		<style>
+			#redips-drag table tr td div.redips-drag{
+				width:800px;
+			}
+		</style>
+	</head>
+	<body onload="onloading()">
+
+	<!--
+		id redips-drag : the div which contains the table
+		class redips-drag : the draggable item (div)
+		
+		redips-mark : case undroppable (td)  except if REDIPS.drag.mark.exception.d8 = 'smile';  d8 is the div id
+		
+		redips-clone : item (div) which can be cloned
+		climit1_3 : 3 times cloned before to can be moved
+		climit2_2 : 2 times cloned before to have opacity effect (REDIPS.drag.style.opacityDisabled = ?[1-100];)
+		
+		redips-trash : bin for !(clone items)
+		
+	-->
+		<div id="redips-drag">
+			
+			<table>
+			
+				<tr>
+					<td>
+						<div class="redips-drag">
+							<input type="text" name="ve_state" value="1" />
+							<input type="color" name="ve_backgroundColor" value="${state.ve_backgroundColor}" />
+							<input type="color" name="ve_fontColor" value="${state.ve_fontColor}" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="redips-drag">
+							<input type="text" name="ve_state" value="2" />
+							<input type="color" name="ve_backgroundColor" value="${state.ve_backgroundColor}" />
+							<input type="color" name="ve_fontColor" value="${state.ve_fontColor}" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="redips-drag">
+							<input type="text" name="ve_state" value="3" />
+							<input type="color" name="ve_backgroundColor" value="${state.ve_backgroundColor}" />
+							<input type="color" name="ve_fontColor" value="${state.ve_fontColor}" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="redips-trash" title="Trash">Trash</td>
+				</tr>
+			</table>
+			
+		</div>
+	</body>
+</html>

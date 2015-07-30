@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>list sort</title>
+
+  <style>
+	p,h3 {
+		margin: 0; 
+		padding: 0;
+	}
+    p {
+		height: 150px; 
+		width: 200px; 
+		border: 1px solid black;
+	}
+    h3 {
+		height: 50px; 
+		width: 200px; 
+		background-color: blue; 
+		color: white; 
+		border: 1px solid black;
+	}
+
+  </style>
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+		
+			//Get arrays containing headers and paragraphs
+			var headings = $('h3'),
+            paras = $('p');
+			
+			// Hide all paragraphs
+			paras.hide();
+			// I can also do it and show the first
+			//paras.hide().eq(0).show();
+			
+			//add a click event to headers
+			headings.click(function() {
+				var cur = $(this); //save the element that has been clicked for easy referal
+				//cur.siblings('p').hide(); //hide all the paragraphs
+				//paras.hide();//same effect
+				cur.siblings('p').slideUp();// Better effect
+				//cur.next('p').show(); //get the next paragraph after the clicked header and show it
+				cur.next('p').slideDown();
+
+			});
+		});
+	</script>
+</head>
+<body>
+
+
+	<h3>Item 1</h3>
+    <p>Item 1 content</p>
+    <h3>Item 2</h3>
+    <p>Item 2 content</p>
+    <h3>Item 3</h3>
+    <p>Item 3 content</p>
+    <h3>Item 4</h3>
+    <p>Item 4 content</p>
+	
+
+
+
+
+ 
+</body>
+
+
+	
+	
+
+	
+	
+
+</html>

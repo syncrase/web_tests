@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			[draggable] {
+			-moz-user-select: none;
+			-khtml-user-select: none;
+			-webkit-user-select: none;
+			user-select: none;
+			-khtml-user-drag: element;
+			-webkit-user-drag: element;
+			}
+			
+			.tableheadercolumn {
+			text-align:center;
+			}
+			
+			.row {
+			height: auto;
+			width: auto;
+			float: left;
+			clear:both;
+			border: 2px solid #666666;
+			padding:5px 5px 5px 0;
+			margin:0 0 5px 0;
+			-webkit-border-radius: 10px;
+			-ms-border-radius: 10px;
+			-moz-border-radius: 10px;
+			border-radius: 10px;
+			-webkit-box-shadow: inset 0 0 3px #000;
+			-ms-box-shadow: inset 0 0 3px #000;
+			box-shadow: inset 0 0 3px #000;
+			text-align: center;
+			cursor: move;
+			}
+			
+			.row.over {
+			border: 2px dashed #326587;
+			}
+			
+			.header{
+			float:left;
+			margin:0 0 5px 0;
+			}
+			.colfilename{
+			width:200px;
+			}
+			.colexpression{
+			width:200px;
+			}
+			.colcustomstatuses{
+			width:400px;
+			}
+			
+			.colremovecustomstatus{
+			
+			}
+			
+			
+			.coldraggableindicator {
+			height:10px;
+			width:25px;
+			}
+			
+			.bar{
+			height:5px;
+			width:25px;
+			background: rgb(229,235,238);
+			-webkit-border-radius: 3px;
+			-ms-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+			}
+			
+			.betweenbar{
+			height:5px;
+			width:25px;
+			}
+			
+			.extremity{
+			height:10px;
+			width:25px;
+			}
+			
+			.left{
+			float:left;
+			}
+			
+			.w25{
+			width:25%;
+			}
+			.w50{
+			width:50%;
+			}
+			.h100{
+			height:100%;
+			}
+			
+			.h10p{
+			height:10px;
+			}
+			.w25p{
+			width:25px;
+			}
+			.w50p{
+			width:50px;
+			}
+			
+			
+			
+			.cross{
+			width:22px;
+			height:22px;
+			position:absolute;
+			border-radius:6px;
+			box-shadow:2px 2px 4px 0 white;
+			vertical-align: top;
+			}
+			
+			.cross:before,.cross:after{
+			content:'';
+			position:absolute;
+			width:18px;
+			height:3px;
+			background-color:rgb(229,235,238);
+			border-radius:2px;
+			top:9px;
+			<!--box-shadow:0 0 2px 0 #ccc;-->
+			
+			}
+			
+			.cross:before{
+			-webkit-transform:rotate(45deg);
+			-moz-transform:rotate(45deg);
+			transform:rotate(45deg);
+			left:2px;
+			}
+			.cross:after{
+			-webkit-transform:rotate(-45deg);
+			-moz-transform:rotate(-45deg);
+			transform:rotate(-45deg);
+			right:2px;
+			}
+			.cross.over{
+			background-color:#FF1B1B;
+			cursor: default;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<table id="rows" >
+            <tr class="header" >
+				<th class="tableheadercolumn colfilename" >Col A</th>
+				<th class="tableheadercolumn colexpression" >Col B</th>
+				<th class="tableheadercolumn colcustomstatuses" >
+					<div class="left w50">Col C-A</div>
+					<div class="left w50">Col C-B</div>
+				</th>
+				<th class="tableheadercolumn coldraggableindicator" >
+				</th>
+				<th class="" >
+				</th>
+			</tr>
+            
+			<tr  class="row"  draggable="true">
+				<td class="colfilename">
+					<input type="text" name="customStatusesFilename" value="filename A"/>
+				</td>
+				<td class="colexpression">
+					<input type="text" name="customStatusesExpression" value="expression A" />
+				</td> 
+				<td class="colcustomstatuses">
+					
+					
+					
+					<table id="customStatusesTable" >
+						
+						<tr>
+							<td class="">
+								<input type="text" name="customStatusesFilename" value="value resturned"/>
+							</td>
+							<td class="">
+								<input type="text" name="customStatusesExpression" value="associated status" />
+							</td> 
+							<td class="colremovecustomstatus">
+							</td>
+						</tr>
+						<tr>
+							<td class="">
+								<input type="text" name="customStatusesFilename" value="value resturned"/>
+							</td>
+							<td class="">
+								<input type="text" name="customStatusesExpression" value="associated status" />
+							</td> 
+							<td class="colremovecustomstatus">
+							</td>
+						</tr>
+						<tr>
+							<td class="">
+								<input type="text" name="customStatusesFilename" value="value resturned"/>
+							</td>
+							<td class="">
+								<input type="text" name="customStatusesExpression" value="associated status" />
+							</td> 
+							<td class="colremovecustomstatus">
+							</td>
+						</tr>
+						<tr>
+							<td class="">
+								<input type="text" name="customStatusesFilename" value="value resturned"/>
+							</td>
+							<td class="">
+								<input type="text" name="customStatusesExpression" value="associated status" />
+							</td> 
+							<td class="colremovecustomstatus">
+							</td>
+						</tr>
+					</table>
+					<div style="float:left;">
+						<input  type="button" value="Add value" onclick="addXPATHReturnedRow('customStatusesTable#${id}', '${id}')" class="addvaluebutton" tooltip="?" />  
+					</div>
+					
+					
+					
+				</td> 
+				<td class="coldraggableindicator  w25p">
+					<div class="extremity"></div>
+					<div class="bar"></div>
+					<div class="betweenbar"></div>
+					<div class="bar"></div>
+					<div class="betweenbar"></div>
+					<div class="bar"></div>
+					<div class="extremity"></div>
+				</td> 
+				<td class="coldraggableindicator">
+					<div class="h100">
+						<div class="cross" onmouseover="mOver(this)" onmouseout="mOut(this)">
+						</div>
+					</div>
+				</td> 
+			</tr>
+			
+			<tr  class="row"  draggable="true">
+				<td class="colfilename">
+					<input type="text" name="customStatusesFilename" value="filename B"/>
+				</td>
+				<td class="colexpression">
+					<input type="text" name="customStatusesExpression" value="expression B" />
+				</td> 
+				<td class="colcustomstatuses">
+					
+					
+					
+					<table id="customStatusesTable" >
+						
+						<tr>
+							<td class="">
+								<input type="text" name="customStatusesFilename" value="value resturned"/>
+							</td>
+							<td class="">
+								<input type="text" name="customStatusesExpression" value="associated status" />
+							</td> 
+							<td class="colremovecustomstatus">
+							</td>
+						</tr>
+						<tr>
+							<td class="">
+								<input type="text" name="customStatusesFilename" value="value resturned"/>
+							</td>
+							<td class="">
+								<input type="text" name="customStatusesExpression" value="associated status" />
+							</td> 
+							<td class="colremovecustomstatus">
+							</td>
+						</tr>
+						<tr>
+							<td class="">
+								<input type="text" name="customStatusesFilename" value="value resturned"/>
+							</td>
+							<td class="">
+								<input type="text" name="customStatusesExpression" value="associated status" />
+							</td> 
+							<td class="colremovecustomstatus">
+							</td>
+							</tr><tr>
+							<td class="">
+								<input type="text" name="customStatusesFilename" value="value resturned"/>
+							</td>
+							<td class="">
+								<input type="text" name="customStatusesExpression" value="associated status" />
+							</td> 
+							<td class="colremovecustomstatus">
+							</td>
+							</tr><tr>
+							<td class="">
+								<input type="text" name="customStatusesFilename" value="value resturned"/>
+							</td>
+							<td class="">
+								<input type="text" name="customStatusesExpression" value="associated status" />
+							</td> 
+							<td class="colremovecustomstatus">
+							</td>
+						</tr>
+					</table>
+					<div style="float:left;">
+						<input  type="button" value="Add value" onclick="addXPATHReturnedRow('customStatusesTable#${id}', '${id}')" class="addvaluebutton" tooltip="?" />  
+					</div>
+					
+					
+				</td> 
+				<td class="coldraggableindicator  w25p">
+					<div class="extremity"></div>
+					<div class="bar"></div>
+					<div class="betweenbar"></div>
+					<div class="bar"></div>
+					<div class="betweenbar"></div>
+					<div class="bar"></div>
+					<div class="extremity"></div>
+				</td> 
+				<td class="coldraggableindicator">
+					<div class="h100">
+						<div class="cross" onmouseover="mOver(this)" onmouseout="mOut(this)">
+						</div>
+					</div>
+				</td> 
+			</tr>
+			
+			
+		</table>
+	</body>
+	
+	<script type="text/javascript">
+		function mOver(obj) {
+			obj.classList.add('over');
+		}
+		
+		function mOut(obj) {
+			obj.classList.remove('over');
+		}
+		
+		var dragSrcEl = null;
+		
+		function handleDragStart(e) {
+			// alert(this.classList);
+			this.style.opacity = '0.4';  // this / e.target is the source node.
+			dragSrcEl = this;
+			e.dataTransfer.effectAllowed = 'move';
+			e.dataTransfer.setData('text', this.innerHTML);// '/html' must be removed from text/html for the IE10+ compliance
+		}
+		
+		function handleDragOver(e) {
+			if (e.preventDefault) {
+				e.preventDefault(); // Necessary. Allows us to drop.
+			}
+			//alert("youpi");
+			e.dataTransfer.dropEffect = 'move';  // See the section on the DataTransfer object.
+			return false;
+		}
+		
+		function handleDragEnter(e) {
+			// this / e.target is the current hover target.
+			//alert("lk");
+			[].forEach.call(rows, function (row) {
+				row.classList.remove('over');
+			});
+			
+			
+			this.classList.add('over');
+		}
+		
+		//function handleDragLeave(e) {
+		//this.classList.remove('over');  // this / e.target is previous target element.
+		//}
+		
+		function handleDrop(e) {
+			// this / e.target is current target element.
+			
+			if (e.stopPropagation) {
+				e.stopPropagation(); // stops the browser from redirecting.
+			}
+			
+			// Don't do anything if dropping the same row we're dragging.
+			if (dragSrcEl !== this) {
+				// Set the source row's HTML to the HTML of the row we dropped on.
+				dragSrcEl.innerHTML = this.innerHTML;
+				this.innerHTML = e.dataTransfer.getData('text');
+			}
+			
+			return false;
+		}
+		
+		function handleDragEnd(e) {
+			// this/e.target is the source node.
+			this.style.opacity = '1';
+			[].forEach.call(rows, function (row) {
+				row.classList.remove('over');
+			});
+		}
+		
+		
+		
+		
+		var rows = document.querySelectorAll('#rows .row');
+		[].forEach.call(rows, function (row) {
+			// There are a number of different events to attach to for monitoring the entire drag and drop process
+			// see the list of available events on http://help.dottoro.com/larrqqck.php
+			row.addEventListener('dragstart', handleDragStart);// Occurs on the source element when the user starts the drag operation.
+			row.addEventListener('dragenter', handleDragEnter);// Occurs on an element when the user moves the mouse pointer into it during a drag operation.
+			row.addEventListener('dragover', handleDragOver);// Occurs periodically on an element while the mouse pointer is over it during a drag operation.
+			//row.addEventListener('dragleave', handleDragLeave);// Occurs on an element when the user moves the mouse pointer out of it during a drag operation.
+			row.addEventListener('drop', handleDrop);// Occurs on a possible target element when the dragged data is dropped on it.
+			row.addEventListener('dragend', handleDragEnd);// Occurs on the source element when the user has finished the drag operation.
+			// drag : Occurs periodically on the source element during the drag operation.
+			// dragdrop : Occurs on a possible target element when the dragged data is dropped on it.
+			// dragexit : Occurs on an element when the user moves the mouse pointer out of it during a drag operation.
+			// draggesture : Occurs on the source element when the user starts the drag operation.
+		});
+		
+		
+	</script>
+</html>			

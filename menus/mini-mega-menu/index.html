@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dropdown mega menu demo</title>
+<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<meta name="keywords" content="demo, live">
+<meta name="description" content="Live demo of Dropdown mega menu">
+<meta name="robots" content="noindex">
+
+
+<base href='http://www.frontendwebhelp.com/'><style type="text/css">
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 1.5em;
+	margin: 0 0 16px;
+    padding: 15px 0 5px;
+}
+ul, li { 
+	margin: 0;
+}
+
+.nav { height: 30px; list-style-type: none; padding: 0; }
+.nav-item { background-image: none; display: block; float: left; margin: 0; padding-left: 0; 
+	position: relative; text-align: center; }
+.nav-submenu { background-color: #DDDDDD; border: 1px solid #CCC; display: none; height: 120px;
+	position: absolute; text-align: left; top: 30px; width: 350px; }
+.submenu-2 { left: -82px; }
+.submenu-3 { left: -164px; height: 185px; }
+	
+.nav-item:hover .nav-submenu { display: block; }
+
+a.nav-item-link { background-color: #CCCCCC; color: #663333; display: block; font-weight: bold; height: 22px;
+	margin: 0 0 0 2px; padding: 8px 10px 0; text-decoration: none; }
+a.nav-item-link:hover,
+.nav-item:hover a.nav-item-link { background-color: #CCDDCC; color: #333366; }
+
+.nav-submenu-intro,
+ul.nav-submenu-subnav { padding: 0 0 4px; width: 140px; float: left; }
+ul.nav-submenu-subnav li {
+	display: block;
+    padding: 4px 0 0 8px;
+}
+ul.nav-submenu-subnav li a {
+	color: #663333;
+	text-decoration: none;
+}
+ul.nav-submenu-subnav li a:hover {
+    color: #223333;
+}
+
+.nav-submenu-content { float: left; width: 210px; }
+.nav-submenu .nav-submenu-thumb {
+	float: left;
+	margin: 10px 10px 2px 0;
+}
+.nav-submenu h3 {
+	font-size: 16px;
+	margin: 10px;
+}
+.nav-submenu p {
+	color: Black;
+	font-weight: normal;
+	font-size: 12px;
+	margin: 0 10px 10px 0;
+}
+.nav-submenu .nav-submenu-intro p { margin-left: 10px; }
+.nav-submenu iframe.youtube { margin-top: 10px; }
+
+</style>
+<!--[if lte IE 6]>
+<style type="text/css">
+.nav a.nav-item-link { width: 60px; text-indent: -10000px; }
+.nav a.nav-item-link-ie6 { position:absolute; display:block; overflow:hidden; top: 0; left: 0; text-indent: 0; }
+.nav a.nav-item-link-ie6:hover { overflow:visible; }
+
+.nav .nav-submenu { display:block; background-image: none; }
+.nav a.nav-item-link-ie6 span { display:none; }
+.nav ul.nav-submenu-subnav li a { height: 16px; line-height: 16px; }
+
+.nav a.nav-item-link-ie6 iframe.ie6-iframe { position: absolute; top: 30px; width: 350px; height: 120px; }
+.nav #nav-2 a.nav-item-link-ie6 iframe.ie6-iframe { left: -82px; }
+.nav #nav-3 a.nav-item-link-ie6 iframe.ie6-iframe { left: -164px; height: 185px; }
+</style>
+<![endif]-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.fancybox-1.3.4.pack.js"></script>
+<script type="text/javascript">
+$(document).ready( function() {
+	$(".fancybox-close-manual").click( function () {
+		parent.$.fancybox.close();
+	});
+});
+</script>
+</head>
+
+<body>
+
+<div class="container">
+
+<div id="content">
+	<div class="span9">
+		<h1>Demo - Dropdown mega menu</h1>
+		<div id="nav-wrapper">
+  <ul class="nav">
+    <li id="nav-1" class="nav-item">
+      <a class="nav-item-link" href="javascript:;">Main nav 1</a>
+      <!--[if lte IE 6]><a class="nav-item-link nav-item-link-ie6" href="javascript:;">Main nav 1</a><![endif]-->
+    </li>
+    <li id="nav-2" class="nav-item">
+      <a class="nav-item-link" href="javascript:;">Main nav 2</a>
+      <!--[if lte IE 6]><a class="nav-item-link nav-item-link-ie6" href="javascript:;">Main nav 2<table><tr><td><iframe class="ie6-iframe" frameborder="0" border="0"></iframe><![endif]-->
+      <div class="nav-submenu submenu-2">
+        <ul class="nav-submenu-subnav">
+          <li><a href="javascript:;">Link 1</a></li>
+          <li><a href="javascript:;">Subnavigation item 2</a></li>
+          <li><a href="javascript:;">Subnav item 3</a></li>
+          <li><a href="javascript:;">Link 4</a></li>
+          <li><a href="javascript:;">Subnavigation item 5</a></li>
+          <li><a href="javascript:;">Subnav item 6</a></li>
+        </ul>
+		<div class="nav-submenu-content">
+			<img src="html-css-tips-tricks/img/beluga_close.jpg" class="nav-submenu-thumb" alt="Beluga">
+			<h3>Beluga whale</h3>
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the... <a href="javascript:;">more &raquo;</a></p>
+		</div>
+      </div>
+      <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+    </li>
+    <li id="nav-3" class="nav-item">
+      <a class="nav-item-link" href="javascript:;">Main nav 3</a>
+      <!--[if lte IE 6]><a class="nav-item-link nav-item-link-ie6" href="javascript:;">Main nav 3<table><tr><td><iframe class="ie6-iframe" frameborder="0" border="0"></iframe><![endif]-->
+      <div class="nav-submenu submenu-3">
+		<div class="nav-submenu-intro">
+			<h3>Video</h3>
+			<p>You can add videos to mega-menus :).
+				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the... <a href="javascript:;">more &raquo;</a>
+			</p>
+		</div>
+		<div class="nav-submenu-content">
+			<iframe class="youtube" width="200" height="165" src="http://www.youtube.com/embed/I9MZNEXrElw" frameborder="0"></iframe>
+		</div>
+	  </div>
+      <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+    </li>
+  </ul>
+</div>
+
+
+
+<h2>Lorem ipsum heading</h2>
+<select id="dummy-select" style="width: 200px;">
+	<option>Select value 1</option>
+	<option>Select value 2</option>
+</select>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard 
+dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+<p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It 
+was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with 
+desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+
+
+		<p>&nbsp;</p>
+		<p><a href="javascript:;" class="fancybox-close-manual">Close</a> | <a href="http://www.frontendwebhelp.com/" target="_top">Front End Web Help - Home</a></p>
+	</div>
+	<div class="span3"></div>
+	
+</div>
+
+</div><!-- // .container -->
+
+
+</body>
+</html>
+
+
+
+
