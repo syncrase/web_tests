@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<style type="text/css">
+		</style>
+	</head>
+	<body>
+		
+		
+		
+		<table id="rows">
+			<tr class="row" draggable="true">
+				<td><input type="text" name="field 1" value="A"/></td>
+				<td><input type="color" name="statusColorBackgroundColor" value="#876521" /></td>
+				<td><input type="color" name="statusColorFontColor" value="#325498" /></td>
+				<td class="dndindicator">
+					<div class="extremity"></div>
+					<div class="bar"></div>
+					<div class="betweenbar"></div>
+					<div class="bar"></div>
+					<div class="betweenbar"></div>
+					<div class="bar"></div>
+					<div class="extremity"></div>
+				</td>
+			</tr>
+			<tr class="row" draggable="true" style="display:none;" >
+				<td><input type="text" name="field 2" id="id2}" value="B"/></td>
+				<td><input type="color" name="statusColorBackgroundColor" value="#876521" /></td>
+				<td><input type="color" name="statusColorFontColor" value="#325498" /></td>
+				<td class="dndindicator">
+					<div class="extremity"></div>
+					<div class="bar"></div>
+					<div class="betweenbar"></div>
+					<div class="bar"></div>
+					<div class="betweenbar"></div>
+					<div class="bar"></div>
+					<div class="extremity"></div>
+				</td>
+			</tr>
+		</table>
+		
+		
+		
+		
+		
+		
+		
+	</body>
+	
+	<script type="text/javascript">
+		
+		
+		var dragSrcEl = null;
+		
+		function handleDragStart(e) {
+			// alert(this.classList);
+			this.style.opacity = '0.4';  // this / e.target is the source node.
+			dragSrcEl = this;
+			e.dataTransfer.effectAllowed = 'move';
+			e.dataTransfer.setData('text', this.innerHTML);// '/html' must be removed from text/html for the IE10+ compliance
+		}
+		
+		function handleDragOver(e) {
+			if (e.preventDefault) {
+				e.preventDefault(); // Necessary. Allows us to drop.
+			}
+			//alert("youpi");
+			e.dataTransfer.dropEffect = 'move';  // See the section on the DataTransfer object.
+			return false;
+		}
+		
+		function handleDragEnter(e) {
+			// this / e.target is the current hover target.
+			//alert("lk");
+			[].forEach.call(rows, function (row) {
+				row.classList.remove('over');
+			});
+			
+			
+			this.classList.add('over');
+		}
+		
+		//function handleDragLeave(e) {
+		//this.classList.remove('over');  // this / e.target is previous target element.
+		//}
+		
+		function handleDrop(e) {
+			// this / e.target is current target element.
+			
+			if (e.stopPropagation) {
+				e.stopPropagation(); // stops the browser from redirecting.
+			}
+			
+			// Don't do anything if dropping the same row we're dragging.
+			if (dragSrcEl !== this) {
+				// Set the source row's HTML to the HTML of the row we dropped on.
+				dragSrcEl.innerHTML = this.innerHTML;
+				this.innerHTML = e.dataTransfer.getData('text');
+			}
+			
+			return false;
+		}
+		
+		function handleDragEnd(e) {
+			// this/e.target is the source node.
+			this.style.opacity = '1';
+			[].forEach.call(rows, function (row) {
+				row.classList.remove('over');
+			});
+		}
+		
+		
+		
+		
+		var rows = document.querySelectorAll('#rows .row');
+		[].forEach.call(rows, function (row) {
+			// There are a number of different events to attach to for monitoring the entire drag and drop process
+			// see the list of available events on http://help.dottoro.com/larrqqck.php
+			row.addEventListener('dragstart', handleDragStart);// Occurs on the source element when the user starts the drag operation.
+			row.addEventListener('dragenter', handleDragEnter);// Occurs on an element when the user moves the mouse pointer into it during a drag operation.
+			row.addEventListener('dragover', handleDragOver);// Occurs periodically on an element while the mouse pointer is over it during a drag operation.
+			//row.addEventListener('dragleave', handleDragLeave);// Occurs on an element when the user moves the mouse pointer out of it during a drag operation.
+			row.addEventListener('drop', handleDrop);// Occurs on a possible target element when the dragged data is dropped on it.
+			row.addEventListener('dragend', handleDragEnd);// Occurs on the source element when the user has finished the drag operation.
+			// drag : Occurs periodically on the source element during the drag operation.
+			// dragdrop : Occurs on a possible target element when the dragged data is dropped on it.
+			// dragexit : Occurs on an element when the user moves the mouse pointer out of it during a drag operation.
+			// draggesture : Occurs on the source element when the user starts the drag operation.
+		});
+		
+		
+	</script>
+</html>			

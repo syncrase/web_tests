@@ -1,0 +1,107 @@
+<!DOCTYPE  html>
+<html>
+	<head>
+		<title> test 2 </title>
+		<style type="text/css">
+			#outer-dropzone {
+			height: 140px;
+			}
+			
+			#inner-dropzone {
+			height: 80px;
+			}
+			
+			.dropzone {
+			background-color: #ccc;
+			border: dashed 4px #666;
+			border-radius: 4px;
+			margin: 10px auto 30px;
+			padding: 10px;
+			width: 80%;
+			transition: background-color 0.3s;
+			}
+			
+			.drop-target {
+			background-color: #29e;
+			}
+			
+			.drag-drop {
+			display: inline-block;
+			min-width: 40px;
+			padding: 2em 0.5em;
+			
+			background-color: #99e;
+			border: solid 2px white;
+			
+			transition: background-color 0.3s;
+			}
+			
+			.can-drop {
+			background-color: #4e4;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<div id="no-drop" class="drag-drop"> #no-drop </div>
+		
+		<div id="yes-drop" class="drag-drop"> #yes-drop </div>
+		
+		<div id="outer-dropzone" class="dropzone">
+			#outer-dropzone
+			<div id="inner-dropzone" class="dropzone">#inner-dropzone</div>
+		</div>
+		
+		
+		
+		<script type="text/javascript">
+			interact('.dropzone')
+			// enable draggables to be dropped into this
+			.dropzone(true)
+			// only accept elements matching this CSS selector
+			.accept('#yes-drop')
+			// listen for drop related events
+			.on('dragenter', function (event) {
+				var draggableElement = event.relatedTarget,
+				dropzoneElement = event.target;
+				
+				// feedback the possibility of a drop
+				dropzoneElement.classList.add('drop-target');
+				draggableElement.classList.add('can-drop');
+				draggableElement.textContent = 'Dragged in';
+			})
+			.on('dragleave', function (event) {
+				// remove the drop feedback style
+				event.target.classList.remove('drop-target');
+				event.relatedTarget.classList.remove('can-drop');
+				event.relatedTarget.textContent = 'Dragged out';
+			})
+			.on('drop', function (event) {
+				event.relatedTarget.textContent = 'Dropped';
+				//This works
+				$(event.relatedTarget).hide();
+			});
+			
+			interact('.drag-drop')
+			.draggable({
+				onmove: function (event) {
+					var target = event.target;
+					
+					target.x = (target.x|0) + event.dx;
+					target.y = (target.y|0) + event.dy;
+					
+					target.style.webkitTransform = target.style.transform =
+					'translate(' + target.x + 'px, ' + target.y + 'px)';
+				}
+			})
+			.inertia(true)
+			.restrict({ drag: 'parent' });
+			
+			
+		</script>
+		
+	</body>
+	
+	</html>	
